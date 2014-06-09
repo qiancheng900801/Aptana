@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>getElementByName</title>
+		<meta name="author" content="Yang" />
+		<!-- Date: 2014-06-08 -->
+	</head>
+	<body>
+		<form name="form1" action="test.html" method="post" >
+		  <!--<input type="text" name="tname" value="name1"  id="tid_1"  onchange="change(this.id)"><br>
+		  <input type="text" name="tname" value="name2"  id="tid_2" onchange="change(this.id)" ><br>
+		  <input type="text" name="tname" value="name3"  id="tid_3"  onchange="change(this.id)"><br>-->
+
+		  <input type="text" name="tname" value="name1"  id="tid_1"/><br>
+		  <input type="text" name="tname" value="name2"  id="tid_2"/><br>
+		  <input type="text" name="tname" value="name3"  id="tid_3"/><br>
+
+		  <input type="button" name="ok" value="保存1"/>
+  	   </form>
+	</body>
+	<script>
+        //通过元素的name属性获取所有元素的引用
+		var tnameElements=document.getElementsByName("tname");
+        //测试数据的长度
+		//alert(tnameelements.length);
+        //遍历元素，输出所有value属性的值
+		/*for(var i=0;i<tnameelements.length;i++){
+			alert(tnameelements[i].value);
+		}*/
+        //为每个文本框(<input type="text">)增加change事件，当值改变时，输出改变的值。
+        /*function change(id){
+            alert(document.getElementById(id).value);
+        }*/
+        for(var i=0;i<tnameElements.length;i++) {
+            var tnameElement=tnameElements[i];
+            tnameElement.onchange=function(){
+                alert(this.value);
+            }
+        }
+	</script>
+</html>
+
